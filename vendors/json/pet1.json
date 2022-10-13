@@ -1,0 +1,18 @@
+{
+  "id": 3475757,
+  "category": {
+    "id": 1,
+    "name": "Cachorro"
+  },
+  "name": "Luke",
+  "photoUrls": [
+    "string"
+  ],
+  "tags": [
+    {
+      "id": 1,
+      "name": "Vacinado"
+    }
+  ],
+  "status": "available"
+}
