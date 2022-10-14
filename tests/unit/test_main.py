@@ -3,21 +3,7 @@ import csv
 import pytest
 
 from main import somar, subtrair, multiplicar, dividir
-
-
-def leitura_csv(arquivo_csv):
-    dados_csv = []
-    try:
-        with open(arquivo_csv, newline='') as massa:
-            campos = csv.reader(massa, delimiter=',')
-            next(campos)
-            for linha in campos:
-                dados_csv.append(linha)
-        return dados_csv
-    except FileNotFoundError:
-        print(f'Arquivo não encontrado: {arquivo_csv}')
-    except Exception as fail:
-        print(f'Falha imprevista: {fail}')
+from tests.utils.file_manager import leitura_csv
 
 
 def teste_somar():
@@ -31,6 +17,7 @@ def teste_somar():
 
     # 3- Validar
     assert resultado_obtido == resultado_esperado
+
 
 def teste_subtrair():
     # 1- Configurar
@@ -64,6 +51,7 @@ def teste_somar_leitura_de_lista(numero_a, numero_b, resultado_esperado):
 
     # 3- Validar
     assert resultado_obtido == resultado_esperado
+
 
 @pytest.mark.parametrize('numero_a, numero_b, resultado_esperado', leitura_csv('C:\\Users\\A426692\\PycharmProjects'
                                                                                '\\134Inicial\\vendors\\csv\\massa_teste_somar_positivo.csv'))
