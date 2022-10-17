@@ -158,7 +158,7 @@ def teste_excluir_pet():
     assert resultado_obtido['type'] == tipo_esperado
     assert resultado_obtido['message'] == mensagem_esperada
 
-
+ 
 @pytest.mark.parametrize('pet_id,category_id,category_name,pet_name,tags_id,tags_name,status', leitura_csv('C:\\Users\\A426692\\PycharmProjects'
                                                                                '\\134Inicial\\vendors\\csv\\massa_incluir_pet.csv'))
 def teste_incluir_pet_em_massa(pet_id, category_id, category_name, pet_name, tags_id, tags_name, status):
