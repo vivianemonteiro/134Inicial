@@ -1,5 +1,5 @@
 # Done: 3. Criar a venda de um pet para um usuário
-# ToDo: 4. Consultar os dados do pet que foi vendido
+# Done: 4. Consultar os dados do pet que foi vendido
 import os.path
 
 import requests
