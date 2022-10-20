@@ -1,21 +1,19 @@
-import time
-
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-
+import time
 
 class TestBlazeDemoCompra:
     def setup_method(self):
-        self.driver = webdriver.Chrome('C:\\Users\\A426692\\PycharmProjects\\134Inicial\\vendors\\drivers'
-                                       '\\chromedriver.exe')
+        self.driver = webdriver.Chrome()
         self.vars = {}
 
     def teardown_method(self):
         self.driver.quit()
 
     def test_blazeDemoCompra(self):
-        self.driver.get("https://blazedemo.com/")
+        self.driver.get('http://blazedemo.com/')
         self.driver.set_window_size(1936, 1056)
+        time.sleep(5)
         self.driver.find_element(By.NAME, "fromPort").click()
         dropdown = self.driver.find_element(By.NAME, "fromPort")
         dropdown.find_element(By.XPATH, "//option[. = 'São Paolo']").click()
@@ -50,4 +48,3 @@ class TestBlazeDemoCompra:
         self.driver.find_element(By.CSS_SELECTOR, "body").click()
         assert self.driver.find_element(By.CSS_SELECTOR,
                                         ".container:nth-child(2)").text == "Destination of the week: Hawaii !"
-
